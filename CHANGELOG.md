@@ -1,3 +1,25 @@
+0.13.3
+------
+* POM 220, which includes OSS expose-versions maven plugin, solving issues for OSS users
+* #124: Separate the handling of the embedded dir in a directory provider interface (PgDirectoryResolver), 
+and moves all logic to handle existing bundles from the main class to a separate one 
+(UncompressBundleDirectoryResolver ) which implements the PgDirectoryResolver interface.
+  
+  Eg:
+  
+  `EmbeddedPostgres pg = EmbeddedPostgres.builder().setPostgresBinaryDirectory(new File("/usr/local")).start();`
+
+0.13.2
+------
+* Expose contexts for LiquibasePreparer (#106)
+* Add OpenJDK 11 to the Travis test matrix and cache dependencies (#118)
+* adds optional prefix to logger (#113)
+* Issue #116 Server startup fails with "port out of range:-1" error (#117)
+* Overwrite existing extracted files if they exist. (#120)
+* ProcessOutputLogger: don't prevent jvm shutdown (#123)
+* Update POM
+* Upgrade to Flyway 6 API (#126)
+
 0.13.1
 ------
 * PR #104 - improved logging names
